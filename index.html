@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" class="stop-scrolling">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Moorhen is a molecular graphics web application based on the Coot desktop program." />
+
+    <title>Moorhen</title>
+    
+    <script src="coi-serviceworker.min.js"></script>
+    
+    <script>
+      if (!crossOriginIsolated) SharedArrayBuffer = ArrayBuffer;
+    </script>
+
+    <script>
+      window.onload = () => {
+        try {
+          createCCP4Module({
+            print(t) {
+              console.log(["output", t]);
+            },
+            printErr(t) {
+              console.log(["output", t]);
+            }
+          })
+          .then(function (CCP4Mod) {
+            window.CCP4Module = CCP4Mod;
+          })
+          .catch((e) => {
+            console.log("CCP4 problem :(");
+            console.log(e);
+            alert("There was a problem loading the CCP4 module. Please clear your browser's cached data and try again. If the problem persists contact moorhen-group@york.ac.uk.");
+          });
+        } catch (err) {
+          console.err(err)
+          alert("There was a problem loading Moorhen. Please clear your browser's cached data and try again. If the problem persists contact moorhen-group@york.ac.uk.")
+        }
+      }
+    </script>
+    <script src="/baby-gru/wasm/web_example.js" onerror="alert('There was a problem loading WASM. Please clear your browsers cached data and try again. If the problem persists contact moorhen-group@york.ac.uk.')"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+  
+</html>
