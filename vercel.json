@@ -1,5 +1,5 @@
 {
-    "installCommand": "npm install",
+    "installCommand": "npm install && cp -r ./node_modules/moorhen/baby-gru/ ./public/",
     "buildCommand": "npm run build",
     "outputDirectory": "dist",
     "headers": [{
