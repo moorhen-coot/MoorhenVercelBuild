@@ -1,7 +1,6 @@
 import { MoorhenReduxProvider, ErrorBoundary } from 'moorhen'
 import React from 'react'
 import { MoorhenRouter } from './MoorhenRouter'
-import { SpeedInsights } from '@vercel/speed-insights/next';
 
 function App() {
 
@@ -10,7 +9,6 @@ function App() {
       <div className="App">
         <MoorhenReduxProvider>
           <MoorhenRouter />
-          <SpeedInsights />
         </MoorhenReduxProvider>
       </div>
     </ErrorBoundary>
