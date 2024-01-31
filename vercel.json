@@ -2,7 +2,7 @@
     "installCommand": "npm install && cp -r ./node_modules/moorhen/baby-gru/ ./public/",
     "buildCommand": "npm run build",
     "outputDirectory": "dist",
-    "routes":  [
+    "redirects":  [
         { "src": "/", "dest": "/" },
         { "src": "/pdb", "dest": "/" },
         { "src": "/tutorial", "dest": "/" }
