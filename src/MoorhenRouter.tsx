@@ -33,17 +33,20 @@ const WrappedMoorhenContainer: React.FC = () => {
         const newMolecule = new MoorhenMolecule(commandCentre, glRef, "")
         const newMap = new MoorhenMap(commandCentre, glRef)
         const newDiffMap = new MoorhenMap(commandCentre, glRef)
-        await newMolecule.loadToCootFromURL(`${urlPrefix}/baby-gru/tutorials/moorhen-tutorial-structure-number-${tutorialNumber}.pdb`, `mol-${tutorialNumber}`)
+        await newMolecule.loadToCootFromURL(
+            `https://raw.githubusercontent.com/moorhen-coot/moorhen/master/baby-gru/public/baby-gru/tutorials/moorhen-tutorial-structure-number-${tutorialNumber}.pdb`,
+            `mol-${tutorialNumber}`
+        )
         await newMolecule.fetchIfDirtyAndDraw('CBs')
         dispatch(addMolecule(newMolecule))
         await newMolecule.centreOn('/*/*/*/*', false)
         await newMap.loadToCootFromMtzURL(
-            `${urlPrefix}/baby-gru/tutorials/moorhen-tutorial-map-number-${tutorialNumber}.mtz`,
+            `https://raw.githubusercontent.com/moorhen-coot/moorhen/master/baby-gru/public/baby-gru/tutorials/moorhen-tutorial-map-number-${tutorialNumber}.mtz`,
             `map-${tutorialNumber}`,
             { isDifference: false, useWeight: false, calcStructFact: true, ...tutorialMtzColumnNames[tutorialNumber] }
         )
         await newDiffMap.loadToCootFromMtzURL(
-            `${urlPrefix}/baby-gru/tutorials/moorhen-tutorial-map-number-${tutorialNumber}.mtz`,
+            `https://raw.githubusercontent.com/moorhen-coot/moorhen/master/baby-gru/public/baby-gru/tutorials/moorhen-tutorial-map-number-${tutorialNumber}.mtz`,
             `diff-map-${tutorialNumber}`,
             { F: "DELFWT", PHI: "PHDELWT", isDifference: true, useWeight: false }
         )
