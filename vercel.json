@@ -3,8 +3,7 @@
     "buildCommand": "npm run build",
     "outputDirectory": "dist",
     "redirects":  [
-        { "source": "/pdb/:pdbId*", "destination": "/" },
-        { "source": "/tutorial/:tutorialNumber*", "destination": "/" }
+        { "source": "/[^.]+", "destination": "/", "status": 200 }
     ],
     "headers": [{
         "source": "/(.*)",
