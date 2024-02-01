@@ -1,6 +1,7 @@
 {
     "installCommand": "npm install && cp -r ./node_modules/moorhen/baby-gru/ ./public/",
     "buildCommand": "npm run build",
+    "devCommand": "npm install && cp -r ./node_modules/moorhen/baby-gru/ ./public/ && npx vite",
     "outputDirectory": "dist",
     "rewrites":  [
         { "source": "/(.*)", "destination": "/" }

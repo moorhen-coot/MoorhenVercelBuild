@@ -1,0 +1,75 @@
+
+import { MoorhenContainer, MoorhenMolecule, MoorhenMap, addMolecule, addMap, setActiveMap } from 'moorhen'
+import { webGL } from 'moorhen/types/mgWebGL';
+import { moorhen } from 'moorhen/types/moorhen';
+import { useEffect, useRef } from 'react';
+import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+
+export const PdbRouter: React.FC = () => {
+    const dispatch = useDispatch()
+    const cootInitialized = useSelector((state: moorhen.State) => state.generalStates.cootInitialized)
+    const defaultBondSmoothness = useSelector((state: moorhen.State) => state.sceneSettings.defaultBondSmoothness)
+    const backgroundColor = useSelector((state: moorhen.State) => state.sceneSettings.backgroundColor)
+    
+    const glRef = useRef<webGL.MGWebGL | null>(null)
+    const commandCentre = useRef<moorhen.CommandCentre | null>(null)
+
+    const { pdbId } = useParams()
+
+    const urlPrefix = ""
+    const baseUrl = 'https://www.ebi.ac.uk/pdbe/entry-files'
+    const monomerLibraryPath = "https://raw.githubusercontent.com/MRC-LMB-ComputationalStructuralBiology/monomers/master/"
+
+    const fetchMolecule = async (url: string, molName: string) => {
+        const newMolecule = new MoorhenMolecule(commandCentre, glRef, monomerLibraryPath)
+        newMolecule.setBackgroundColour(backgroundColor)
+        newMolecule.defaultBondOptions.smoothness = defaultBondSmoothness
+        try {
+            await newMolecule.loadToCootFromURL(url, molName)
+            if (newMolecule.molNo === -1) {
+                throw new Error("Cannot read the fetched molecule...")
+            } 
+            await newMolecule.fetchIfDirtyAndDraw('CRs')
+            await newMolecule.addRepresentation('ligands', '/*/*/*/*')
+            await newMolecule.centreOn('/*/*/*/*', false, false)
+            glRef.current?.setZoom(4.0)
+            dispatch(addMolecule(newMolecule))
+        } catch (err) {
+            console.warn(err)
+            console.warn(`Cannot fetch PDB entry from ${url}, doing nothing...`)
+        }
+    }
+
+    const fetchMap = async (url: string, mapName: string, isDiffMap: boolean = false) => {
+        const newMap = new MoorhenMap(commandCentre, glRef)
+        try {
+            await newMap.loadToCootFromMapURL(url, mapName, isDiffMap)
+            if (newMap.molNo === -1) throw new Error("Cannot read the fetched map...")
+            dispatch(addMap(newMap))
+            dispatch(setActiveMap(newMap))
+        } catch (err) {
+            console.warn(err)
+            console.warn(`Cannot fetch map from ${url}`)
+        }
+        return newMap
+    }
+
+    const loadData = async (pdbId: string) => {
+        await fetchMolecule(`${baseUrl}/download/${pdbId}.cif`, pdbId)
+        await fetchMap(`${baseUrl}/${pdbId}_diff.ccp4`, `${pdbId}-FoFc`, true)
+        await fetchMap(`${baseUrl}/${pdbId}.ccp4`, `${pdbId}-2FoFc`)
+    }
+
+    useEffect(() => {
+        if (cootInitialized && pdbId) {
+            loadData(pdbId)
+        }
+    }, [pdbId, cootInitialized])
+
+    const collectedProps = {
+        glRef, commandCentre, urlPrefix
+    }
+
+    return <MoorhenContainer {...collectedProps} />
+}
