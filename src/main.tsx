@@ -9,6 +9,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <App />
     <Analytics />
-    <SpeedInsights/>
+    <SpeedInsights sampleRate={0.75}/>
   </React.StrictMode>,
 )
