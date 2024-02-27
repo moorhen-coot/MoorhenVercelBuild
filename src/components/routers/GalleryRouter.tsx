@@ -23,7 +23,7 @@ export const GalleryRouter: React.FC = () => {
         navigate(`/gallery/${currentIndex + 1}`)
     }
 
-    return <div style={{display: 'flex', justifyContent: 'center', width: '100wh'}}>
+    return <div className="HIHI" style={{display: 'flex', justifyContent: 'center', width: '100vw'}}>
         <ImageGallery
             items={images}
             infinite={true}
