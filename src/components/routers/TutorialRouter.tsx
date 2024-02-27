@@ -51,7 +51,7 @@ export const TutorialRouter: React.FC = () => {
         )
         dispatch( addMolecule(newMolecule) )
         dispatch( addMapList([newMap, newDiffMap]) )
-        dispatch( setActiveMap(newMap) )   
+        dispatch( setActiveMap(newMap) )
     }
 
     useEffect(() => {
