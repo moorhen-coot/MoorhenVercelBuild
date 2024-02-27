@@ -4,6 +4,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { TutorialRouter } from './TutorialRouter';
 import { PdbRouter } from './PdbRouter';
 import { LigandRouter } from './LigandRouter';
+import { GalleryRouter } from './GalleryRouter';
+import { GallerySessionRouter } from './GallerySessionRouter'
 
 export const MoorhenRouter: React.FC = () => {
     return <RouterProvider router={moorhenRouter} />
@@ -43,6 +45,14 @@ const moorhenRouter = createBrowserRouter(
             path: "/monomer/:ligandName",
             element: <LigandRouter />,
         },
+        {
+            path: "gallery",
+            element: <GalleryRouter />
+        },
+        {
+            path: "gallery/:galleryId",
+            element: <GallerySessionRouter />
+        }
     ]
 )
 
