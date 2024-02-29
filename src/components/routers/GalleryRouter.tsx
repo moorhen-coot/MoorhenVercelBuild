@@ -12,7 +12,7 @@ export const GalleryRouter: React.FC = () => {
     const [showModal, setShowModal] = useState<boolean>(false)
     const [imageIndex, setImageIndex] = useState<number>(0)
 
-    const imageData = [
+    let imageData = [
       {
         src: "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/images/gallery-1.png",
         sessionUrl: "/gallery/1",
@@ -37,6 +37,9 @@ export const GalleryRouter: React.FC = () => {
       },
     ];
 
+    // FIXME: We need more images here...
+    imageData = [ ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData ]
+
     const images = imageData.map(image => {
       return { src: image.src, width: image.originalWidth, height: image.originalHeight }
     })
@@ -50,8 +53,10 @@ export const GalleryRouter: React.FC = () => {
       setShowModal(true)
     }
 
-    return <div style={{width: '100vw'}}>
-        <Gallery images={images} enableImageSelection={false} onClick={handleFigureClick}/>
+    return <div style={{width: '100w', display: 'flex', justifyContent: "center"}}>
+        <div style={{width: '99vw', overflowX: 'hidden', overflowY: 'auto'}}>
+          <Gallery images={images} enableImageSelection={false} onClick={handleFigureClick}/>
+        </div>
         <Modal open={showModal} onClose={() => setShowModal(false)} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description" style={{backdropFilter: "blur(5px)"}}>
         <Box sx={{
             display: 'flex',
