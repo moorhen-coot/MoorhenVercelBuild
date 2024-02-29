@@ -1,8 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Gallery } from "react-grid-gallery";
-import Modal from '@mui/material/Modal';
 import { useCallback, useState } from "react";
-import { Box, IconButton, Typography } from "@mui/material";
+import { Box, IconButton, Typography, Modal } from "@mui/material";
 import { PlayCircleOutlined } from '@mui/icons-material';
 
 export const GalleryRouter: React.FC = () => {
