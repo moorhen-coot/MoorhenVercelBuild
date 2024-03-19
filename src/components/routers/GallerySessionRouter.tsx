@@ -9,7 +9,7 @@ export const GallerySessionRouter: React.FC = () => {
     const dispatch = useDispatch()
 
     const cootInitialized = useSelector((state: moorhen.State) => state.generalStates.cootInitialized)
-    const molecules = useSelector((state: moorhen.State) => state.molecules)
+    const molecules = useSelector((state: moorhen.State) => state.molecules.moleculeList)
     const maps = useSelector((state: moorhen.State) => state.maps)
 
     const timeCapsuleRef = useRef<null | moorhen.TimeCapsule>(null)
