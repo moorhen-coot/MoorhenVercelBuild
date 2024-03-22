@@ -31,8 +31,7 @@ export const PdbRouter: React.FC = () => {
             } 
             await newMolecule.fetchIfDirtyAndDraw('CRs')
             await newMolecule.addRepresentation('ligands', '/*/*/*/*')
-            await newMolecule.centreOn('/*/*/*/*', false, false)
-            glRef.current?.setZoom(4.0)
+            await newMolecule.centreOn('/*/*/*/*', true, true)
             dispatch(addMolecule(newMolecule))
         } catch (err) {
             console.warn(err)
