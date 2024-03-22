@@ -54,15 +54,15 @@ export const PdbRouter: React.FC = () => {
         return newMap
     }
 
-    const loadData = async (pdbId: string) => {
-        await fetchMolecule(`${baseUrl}/download/${pdbId}.cif`, pdbId)
-        await fetchMap(`${baseUrl}/${pdbId}_diff.ccp4`, `${pdbId}-FoFc`, true)
-        await fetchMap(`${baseUrl}/${pdbId}.ccp4`, `${pdbId}-2FoFc`)
+    const loadData = async (pdbCode: string) => {
+        await fetchMolecule(`${baseUrl}/download/${pdbCode}.cif`, pdbCode)
+        await fetchMap(`${baseUrl}/${pdbCode}_diff.ccp4`, `${pdbCode}-FoFc`, true)
+        await fetchMap(`${baseUrl}/${pdbCode}.ccp4`, `${pdbCode}-2FoFc`)
     }
 
     useEffect(() => {
         if (cootInitialized && pdbId) {
-            loadData(pdbId)
+            loadData(pdbId.toLowerCase())
         }
     }, [pdbId, cootInitialized])
 
