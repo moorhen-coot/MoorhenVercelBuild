@@ -1,12 +1,14 @@
-import { MoorhenContainer, loadSessionData } from 'moorhen'
+import { MoorhenContainer, loadSessionFromJsonString } from 'moorhen'
 import { webGL } from 'moorhen/types/mgWebGL';
 import { moorhen } from 'moorhen/types/moorhen';
 import { useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector, useStore } from 'react-redux';
 
 export const GallerySessionRouter: React.FC = () => {
     const dispatch = useDispatch()
+
+    const store = useStore()
 
     const cootInitialized = useSelector((state: moorhen.State) => state.generalStates.cootInitialized)
     const molecules = useSelector((state: moorhen.State) => state.molecules.moleculeList)
@@ -38,7 +40,7 @@ export const GallerySessionRouter: React.FC = () => {
         const response = await fetch(url)
         if (response.ok) {
             const sessionDataString = await response.text()
-            await loadSessionData(sessionDataString, monomerLibraryPath, molecules, maps, commandCentre, timeCapsuleRef, glRef, dispatch)
+            await loadSessionFromJsonString(sessionDataString, monomerLibraryPath, molecules, maps, commandCentre, timeCapsuleRef, glRef, store,  dispatch)
         } else {
             console.warn(`Unable to fetch session data from ${url}`)
         }
