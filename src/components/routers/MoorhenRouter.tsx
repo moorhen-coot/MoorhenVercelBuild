@@ -45,12 +45,14 @@ export const MoorhenRouter: React.FC = () => {
             },
             {
                 path: "gallery",
-                element: <GalleryRouter />
+                element: <GalleryRouter />,
+                children: [
+                    {
+                        path: ":galleryId",
+                        element: <GallerySessionRouter />
+                    }
+                ]
             },
-            {
-                path: "gallery/:galleryId",
-                element: <GallerySessionRouter />
-            }
         ]
     )
     
