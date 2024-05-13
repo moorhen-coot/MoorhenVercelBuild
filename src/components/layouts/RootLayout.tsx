@@ -3,7 +3,7 @@ import { webGL } from 'moorhen/types/mgWebGL';
 import { moorhen } from 'moorhen/types/moorhen';
 import { useRef } from 'react';
 
-export const RootRouter: React.FC = () => {
+export const RootLayout: React.FC = () => {
 
     const glRef = useRef<webGL.MGWebGL | null>(null)
     const commandCentre = useRef<moorhen.CommandCentre | null>(null)

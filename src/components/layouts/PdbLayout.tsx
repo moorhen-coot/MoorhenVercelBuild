@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-export const PdbRouter: React.FC = () => {
+export const PdbLayout: React.FC = () => {
     const dispatch = useDispatch()
     const cootInitialized = useSelector((state: moorhen.State) => state.generalStates.cootInitialized)
     const defaultBondSmoothness = useSelector((state: moorhen.State) => state.sceneSettings.defaultBondSmoothness)

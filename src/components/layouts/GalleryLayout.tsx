@@ -3,7 +3,7 @@ import { useCallback, useState } from "react";
 import { Box, IconButton, Typography, Modal } from "@mui/material";
 import { PlayCircleOutlined } from '@mui/icons-material';
 
-export const GalleryRouter: React.FC = () => {
+export const GalleryLayout: React.FC = () => {
 
     const [showModal, setShowModal] = useState<boolean>(false)
     const [imageIndex, setImageIndex] = useState<number>(0)
