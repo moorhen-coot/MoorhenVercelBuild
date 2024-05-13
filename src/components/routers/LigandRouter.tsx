@@ -1,4 +1,4 @@
-import { MoorhenContainer, MoorhenMolecule, addMolecule } from 'moorhen'
+import { MoorhenContainer, MoorhenMolecule, MoorhenReduxStore, addMolecule } from 'moorhen'
 import { webGL } from 'moorhen/types/mgWebGL';
 import { moorhen } from 'moorhen/types/moorhen';
 import { useEffect, useRef } from 'react';
@@ -28,7 +28,7 @@ export const LigandRouter: React.FC = () => {
         }
         
         const anyMolNo = -999999
-        const newMolecule = new MoorhenMolecule(commandCentre, glRef, baseUrl)
+        const newMolecule = new MoorhenMolecule(commandCentre, glRef, MoorhenReduxStore, baseUrl)
 
         const url = `${baseUrl}/${ligandName.toLowerCase()[0]}/${ligandName.toUpperCase()}.cif`
         const response = await fetch(url);
