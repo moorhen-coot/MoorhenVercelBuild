@@ -53,7 +53,7 @@ export const GalleryLayout: React.FC = () => {
         <div style={{width: '99vw', overflowX: 'hidden', overflowY: 'auto'}}>
           <Gallery images={images} enableImageSelection={false} onClick={handleFigureClick}/>
         </div>
-        <Modal open={showModal} onClose={() => setShowModal(false)} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description" style={{backdropFilter: "blur(5px)"}}>
+        <Modal open={showModal} onClose={() => setShowModal(false)} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description" style={{color: 'black', backdropFilter: "blur(5px)"}}>
         <Box sx={{
             display: 'flex',
             justifyContent: 'center',
