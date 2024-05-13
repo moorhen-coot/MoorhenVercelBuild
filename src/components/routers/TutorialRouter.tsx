@@ -1,4 +1,4 @@
-import { MoorhenContainer, MoorhenMolecule, MoorhenMap, addMolecule, setActiveMap, addMapList } from 'moorhen';
+import { MoorhenContainer, MoorhenMolecule, MoorhenMap, addMolecule, setActiveMap, addMapList, MoorhenReduxStore } from 'moorhen';
 import { webGL } from 'moorhen/types/mgWebGL';
 import { moorhen } from 'moorhen/types/moorhen';
 import { useEffect, useRef } from 'react';
@@ -31,11 +31,11 @@ export const TutorialRouter: React.FC = () => {
             console.warn('Invalid tutorial number, doing nothing...')
             return
         }
-        const newMolecule = new MoorhenMolecule(commandCentre, glRef, monomerLibraryPath)
+        const newMolecule = new MoorhenMolecule(commandCentre, glRef, MoorhenReduxStore, monomerLibraryPath)
         newMolecule.setBackgroundColour(backgroundColor)
         newMolecule.defaultBondOptions.smoothness = defaultBondSmoothness
-        const newMap = new MoorhenMap(commandCentre, glRef)
-        const newDiffMap = new MoorhenMap(commandCentre, glRef)
+        const newMap = new MoorhenMap(commandCentre, glRef, MoorhenReduxStore)
+        const newDiffMap = new MoorhenMap(commandCentre, glRef, MoorhenReduxStore)
         await newMolecule.loadToCootFromURL(`${baseUrl}/moorhen-tutorial-structure-number-${tutorialNumber}.pdb`, `mol-${tutorialNumber}`)
         await newMolecule.fetchIfDirtyAndDraw('CBs')
         await newMolecule.centreOn('/*/*/*/*', false)

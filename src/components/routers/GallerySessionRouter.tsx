@@ -1,4 +1,4 @@
-import { MoorhenContainer, loadSessionFromJsonString } from 'moorhen'
+import { MoorhenContainer, loadSessionFromArrayBuffer } from 'moorhen'
 import { webGL } from 'moorhen/types/mgWebGL';
 import { moorhen } from 'moorhen/types/moorhen';
 import { useEffect, useRef } from 'react';
@@ -26,8 +26,8 @@ export const GallerySessionRouter: React.FC = () => {
     const urlPrefix = ""
     const monomerLibraryPath = "https://raw.githubusercontent.com/MRC-LMB-ComputationalStructuralBiology/monomers/master/"
     const sessionUrls: {[key: string]: string} = {
-        "1": "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/sessions/gallery-1.json",
-        "2": "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/sessions/gallery-2.json"
+        "1": "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/sessions/gallery-1.pb",
+        "2": "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/sessions/gallery-2.pb"
     }
 
     const loadGallerySession = async (sessionId: string) => {
@@ -39,8 +39,8 @@ export const GallerySessionRouter: React.FC = () => {
         const url = sessionUrls[sessionId]
         const response = await fetch(url)
         if (response.ok) {
-            const sessionDataString = await response.text()
-            await loadSessionFromJsonString(sessionDataString, monomerLibraryPath, molecules, maps, commandCentre, timeCapsuleRef, glRef, store,  dispatch)
+            const sessionArrayBuffer = await response.arrayBuffer()
+            await loadSessionFromArrayBuffer(sessionArrayBuffer, monomerLibraryPath, molecules, maps, commandCentre, timeCapsuleRef, glRef, store,  dispatch)
         } else {
             console.warn(`Unable to fetch session data from ${url}`)
         }

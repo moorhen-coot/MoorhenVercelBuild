@@ -1,4 +1,4 @@
-import { MoorhenContainer, MoorhenMolecule, MoorhenMap, addMolecule, addMap, setActiveMap } from 'moorhen'
+import { MoorhenContainer, MoorhenMolecule, MoorhenMap, addMolecule, addMap, setActiveMap, MoorhenReduxStore } from 'moorhen'
 import { webGL } from 'moorhen/types/mgWebGL';
 import { moorhen } from 'moorhen/types/moorhen';
 import { useEffect, useRef } from 'react';
@@ -21,7 +21,7 @@ export const PdbRouter: React.FC = () => {
     const monomerLibraryPath = "https://raw.githubusercontent.com/MRC-LMB-ComputationalStructuralBiology/monomers/master/"
 
     const fetchMolecule = async (url: string, molName: string) => {
-        const newMolecule = new MoorhenMolecule(commandCentre, glRef, monomerLibraryPath)
+        const newMolecule = new MoorhenMolecule(commandCentre, glRef, MoorhenReduxStore, monomerLibraryPath)
         newMolecule.setBackgroundColour(backgroundColor)
         newMolecule.defaultBondOptions.smoothness = defaultBondSmoothness
         try {
@@ -40,7 +40,7 @@ export const PdbRouter: React.FC = () => {
     }
 
     const fetchMap = async (url: string, mapName: string, isDiffMap: boolean = false) => {
-        const newMap = new MoorhenMap(commandCentre, glRef)
+        const newMap = new MoorhenMap(commandCentre, glRef, MoorhenReduxStore)
         try {
             await newMap.loadToCootFromMapURL(url, mapName, isDiffMap)
             if (newMap.molNo === -1) throw new Error("Cannot read the fetched map...")
