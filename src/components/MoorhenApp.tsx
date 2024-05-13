@@ -48,7 +48,12 @@ export const MoorhenApp: React.FC = () => {
             },
             {
                 path: "gallery",
-                element: <GalleryRouter />,
+                element: (
+                    <>
+                        <GalleryLayout />
+                        <Outlet/>
+                    </>
+                ),
                 children: [
                     {
                         path: ":galleryId",
