@@ -47,7 +47,7 @@ export const TutorialRouter: React.FC = () => {
         await newDiffMap.loadToCootFromMtzURL(
             `${baseUrl}/moorhen-tutorial-map-number-${tutorialNumber}.mtz`,
             `diff-map-${tutorialNumber}`,
-            { F: "DELFWT", PHI: "PHDELWT", isDifference: true, useWeight: false, calcStructFact: true, ...tutorialMtzColumnNames[tutorialNumber] }
+            { ...tutorialMtzColumnNames[tutorialNumber], F: "DELFWT", PHI: "PHDELWT", isDifference: true, useWeight: false, calcStructFact: true }
         )
         dispatch( addMolecule(newMolecule) )
         dispatch( addMapList([newMap, newDiffMap]) )
