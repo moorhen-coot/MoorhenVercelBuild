@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-export const TutorialRouter: React.FC = () => {
+export const TutorialLayout: React.FC = () => {
     const dispatch = useDispatch()
     const cootInitialized = useSelector((state: moorhen.State) => state.generalStates.cootInitialized)
     const defaultBondSmoothness = useSelector((state: moorhen.State) => state.sceneSettings.defaultBondSmoothness)
@@ -47,7 +47,7 @@ export const TutorialRouter: React.FC = () => {
         await newDiffMap.loadToCootFromMtzURL(
             `${baseUrl}/moorhen-tutorial-map-number-${tutorialNumber}.mtz`,
             `diff-map-${tutorialNumber}`,
-            { F: "DELFWT", PHI: "PHDELWT", isDifference: true, useWeight: false, calcStructFact: true, ...tutorialMtzColumnNames[tutorialNumber] }
+            { ...tutorialMtzColumnNames[tutorialNumber], F: "DELFWT", PHI: "PHDELWT", isDifference: true, useWeight: false, calcStructFact: true }
         )
         dispatch( addMolecule(newMolecule) )
         dispatch( addMapList([newMap, newDiffMap]) )

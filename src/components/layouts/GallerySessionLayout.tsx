@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector, useStore } from 'react-redux';
 
-export const GallerySessionRouter: React.FC = () => {
+export const GallerySessionLayout: React.FC = () => {
     const dispatch = useDispatch()
 
     const store = useStore()
