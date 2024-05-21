@@ -27,7 +27,8 @@ export const GallerySessionLayout: React.FC = () => {
     const monomerLibraryPath = "https://raw.githubusercontent.com/MRC-LMB-ComputationalStructuralBiology/monomers/master/"
     const sessionUrls: {[key: string]: string} = {
         "1": "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/sessions/gallery-1.pb",
-        "2": "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/sessions/gallery-2.pb"
+        "2": "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/sessions/gallery-2.pb",
+        "3": "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/sessions/gallery-3.pb",
     }
 
     const loadGallerySession = async (sessionId: string) => {
