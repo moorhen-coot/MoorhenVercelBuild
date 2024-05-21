@@ -35,7 +35,7 @@ export const GalleryLayout: React.FC = () => {
         src: "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/images/gallery-3.png",
         sessionUrl: "/gallery/3",
         originalWidth: 4096, 
-        originalHeight: 2116,
+        originalHeight: 3066,
         onClickWidth: 409,
         onClickHeight: 211,
         tryItButtonTextColour: 'white',
