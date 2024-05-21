@@ -34,13 +34,15 @@ export const GalleryLayout: React.FC = () => {
       {
         src: "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/images/gallery-3.png",
         sessionUrl: "/gallery/3",
-        originalWidth: 4096, 
-        originalHeight: 3066,
-        onClickWidth: 409,
-        onClickHeight: 211,
+        originalWidth: 2890, 
+        originalHeight: 1860,
+        onClickWidth: 289,
+        onClickHeight: 186,
         tryItButtonTextColour: 'white',
         title: "NEAT domain from Staphylococcus aureus in complex with heme",
-        description: "PDB code: 2Z6F."
+        description: <>
+            PDB: <a href="https://www.rcsb.org/structure/2Z6F">2Z6F</a>.
+          </> 
       },
     ];
 
