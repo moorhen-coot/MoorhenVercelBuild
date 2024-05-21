@@ -57,6 +57,19 @@ export const GalleryLayout: React.FC = () => {
          PDB code: <a href="https://www.rcsb.org/structure/8BLA">8BLA</a>.
         </>
       },
+      {
+        src: "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/images/gallery-5.png",
+        sessionUrl: "/gallery/5",
+        originalWidth: 4096, 
+        originalHeight: 2264,
+        onClickWidth: 409,
+        onClickHeight: 226,
+        tryItButtonTextColour: 'white',
+        title: "zebrafish IRF-10 DBD complex with DNA",
+        description: <>
+         PDB code: <a href="https://www.rcsb.org/structure/8HCL">8HCL</a>.
+        </>
+      },
     ];
 
     // FIXME: We need more images here...
