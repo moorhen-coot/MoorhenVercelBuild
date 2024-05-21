@@ -31,6 +31,17 @@ export const GalleryLayout: React.FC = () => {
         title: "Lore ipsum",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dignissim, nisl non feugiat viverra, justo ex pharetra mauris, vel iaculis nisi mi non nulla. Proin vestibulum nisl at vulputate vestibulum. Proin commodo urna vitae elit aliquam porta. Pellentesque metus erat, posuere non volutpat vitae, tincidunt eget est. Mauris egestas sed ipsum vitae aliquet. Integer in augue porta, gravida nulla eu, laoreet orci. Vivamus placerat, nisl et commodo blandit, lectus dui imperdiet nibh, in volutpat sem leo a augue. Nunc auctor sem id arcu tempus, eu ornare dui aliquam. Curabitur imperdiet tellus id quam posuere, eu volutpat magna pulvinar. Vivamus aliquam, nibh sit amet venenatis blandit, mi tortor commodo libero, in volutpat neque nibh in diam."
       },
+      {
+        src: "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/images/gallery-3.png",
+        sessionUrl: "/gallery/3",
+        originalWidth: 4096, 
+        originalHeight: 2116,
+        onClickWidth: 409,
+        onClickHeight: 211,
+        tryItButtonTextColour: 'white',
+        title: "NEAT domain from Staphylococcus aureus in complex with heme",
+        description: "PDB code: 2Z6F."
+      },
     ];
 
     // FIXME: We need more images here...
