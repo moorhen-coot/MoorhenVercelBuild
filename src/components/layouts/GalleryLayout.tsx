@@ -101,7 +101,7 @@ export const GalleryLayout: React.FC = () => {
               fontSize: '36px', // Set the font size here
               fontWeight: 'bold',
               textAlign: 'center', // Center the text
-              width: '100%' // Ensure the titl// Optionally, set the font weight
+              width: '50%' // Ensure the titl// Optionally, set the font weight
             }}
           >
             Moorhen Gallery
