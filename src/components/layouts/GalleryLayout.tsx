@@ -101,50 +101,50 @@ export const GalleryLayout: React.FC = () => {
               fontSize: '36px', // Set the font size here
               fontWeight: 'bold',
               textAlign: 'center', // Center the text
-              width: '50%' // Ensure the titl// Optionally, set the font weight
+              width: '100%' // Ensure the titl// Optionally, set the font weight
             }}
           >
             Moorhen Gallery
           </Typography>
-        <div style={{width: '99vw', overflowX: 'hidden', overflowY: 'auto'}}>
-          <Gallery images={images} enableImageSelection={false} onClick={handleFigureClick}/>
-        </div>
-        <Modal open={showModal} onClose={() => setShowModal(false)} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description" style={{color: 'black', backdropFilter: "blur(5px)"}}>
-        <Box sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            flexDirection: 'column',
-            position: 'absolute' as 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            width: '50wh',
-            bgcolor: 'background.paper',
-            border: '1px solid #000',
-            borderRadius: '1rem',
-            boxShadow: '0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)',
-            p: 4
-        }}>
-        <Typography id="modal-modal-title" variant="h6" component="h2">
-          {imageData[imageIndex].title}
-        </Typography>
-          <div style={{display: 'flex', justifyContent: 'center'}}>
-            <img src={imageData[imageIndex].src} style={{width: imageData[imageIndex].onClickWidth, height: imageData[imageIndex].onClickHeight}}/>
-            <IconButton onClick={handleSessionLoad} style={{
-              position: 'absolute',
-              // top: 50,
-              //right:60,
-              width: imageData[imageIndex].onClickWidth,
-              height: imageData[imageIndex].onClickHeight,
-              color: imageData[imageIndex].tryItButtonTextColour,
-            }}>
-              <PlayCircleOutlined style={{width: '100px', height: '100px'}}/>
-            </IconButton>
+          <div style={{width: '99vw', overflowX: 'hidden', overflowY: 'auto'}}>
+            <Gallery images={images} enableImageSelection={false} onClick={handleFigureClick}/>
           </div>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            {imageData[imageIndex].description}
+          <Modal open={showModal} onClose={() => setShowModal(false)} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description" style={{color: 'black', backdropFilter: "blur(5px)"}}>
+          <Box sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              flexDirection: 'column',
+              position: 'absolute' as 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              width: '50wh',
+              bgcolor: 'background.paper',
+              border: '1px solid #000',
+              borderRadius: '1rem',
+              boxShadow: '0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)',
+              p: 4
+          }}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            {imageData[imageIndex].title}
           </Typography>
-        </Box>
-        </Modal>
-      </div>
+            <div style={{display: 'flex', justifyContent: 'center'}}>
+              <img src={imageData[imageIndex].src} style={{width: imageData[imageIndex].onClickWidth, height: imageData[imageIndex].onClickHeight}}/>
+              <IconButton onClick={handleSessionLoad} style={{
+                position: 'absolute',
+                // top: 50,
+                //right:60,
+                width: imageData[imageIndex].onClickWidth,
+                height: imageData[imageIndex].onClickHeight,
+                color: imageData[imageIndex].tryItButtonTextColour,
+              }}>
+                <PlayCircleOutlined style={{width: '100px', height: '100px'}}/>
+              </IconButton>
+            </div>
+            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              {imageData[imageIndex].description}
+            </Typography>
+          </Box>
+          </Modal>
+        </div>
 }
