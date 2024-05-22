@@ -62,8 +62,8 @@ export const GalleryLayout: React.FC = () => {
         sessionUrl: "/gallery/5",
         originalWidth: 8096, 
         originalHeight: 4264,
-        onClickWidth: 409,
-        onClickHeight: 226,
+        onClickWidth: 809,
+        onClickHeight: 426,
         tryItButtonTextColour: 'grey',
         title: "Zebrafish IRF-10 DBD complex with DNA",
         description: <>
@@ -117,10 +117,9 @@ export const GalleryLayout: React.FC = () => {
           <div style={{display: 'flex', justifyContent: 'center'}}>
             <img src={imageData[imageIndex].src} style={{width: imageData[imageIndex].onClickWidth, height: imageData[imageIndex].onClickHeight}}/>
             <IconButton onClick={handleSessionLoad} style={{
-              // absolute
               position: 'absolute',
               // top: 50,
-              right:60,
+              //right:60,
               width: imageData[imageIndex].onClickWidth,
               height: imageData[imageIndex].onClickHeight,
               color: imageData[imageIndex].tryItButtonTextColour,
