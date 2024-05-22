@@ -62,8 +62,8 @@ export const GalleryLayout: React.FC = () => {
         sessionUrl: "/gallery/5",
         originalWidth: 8096, 
         originalHeight: 4264,
-        onClickWidth: 800,
-        onClickHeight: 400,
+        onClickWidth: 409,
+        onClickHeight: 226,
         tryItButtonTextColour: 'grey',
         title: "Zebrafish IRF-10 DBD complex with DNA",
         description: <>
