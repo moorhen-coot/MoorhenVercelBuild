@@ -119,7 +119,8 @@ export const GalleryLayout: React.FC = () => {
             <IconButton onClick={handleSessionLoad} style={{
               // absolute
               position: 'absolute',
-              left:20,
+              top: 50,
+              right:50,
               width: imageData[imageIndex].onClickWidth,
               height: imageData[imageIndex].onClickHeight,
               color: imageData[imageIndex].tryItButtonTextColour,
