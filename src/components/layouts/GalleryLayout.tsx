@@ -73,8 +73,11 @@ export const GalleryLayout: React.FC = () => {
     ];
 
     // FIXME: We need more images here...
-    imageData = [ ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData ]
+    // this reproduce multiple images
 
+    // imageData = [ ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData ]
+   
+    imageData = [ ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData ]
     const images = imageData.map(image => {
       return { src: image.src, width: image.originalWidth, height: image.originalHeight }
     })
@@ -115,7 +118,7 @@ export const GalleryLayout: React.FC = () => {
             <img src={imageData[imageIndex].src} style={{width: imageData[imageIndex].onClickWidth, height: imageData[imageIndex].onClickHeight}}/>
             <IconButton onClick={handleSessionLoad} style={{
               // absolute
-              position: 'left',
+              position: 'absolute',
               width: imageData[imageIndex].onClickWidth,
               height: imageData[imageIndex].onClickHeight,
               color: imageData[imageIndex].tryItButtonTextColour,
