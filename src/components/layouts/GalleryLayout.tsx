@@ -51,7 +51,7 @@ export const GalleryLayout: React.FC = () => {
         originalHeight: 2264,
         onClickWidth: 409,
         onClickHeight: 226,
-        tryItButtonTextColour: 'white',
+        tryItButtonTextColour: 'grey',
         title: "Human serotonin 5-HT3A receptor in complex with vortioxetine",
         description: <>
          PDB code: <a href="https://www.rcsb.org/structure/8BLA">8BLA</a>.
@@ -77,7 +77,7 @@ export const GalleryLayout: React.FC = () => {
 
     // imageData = [ ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData ]
    
-    imageData = [ ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData ]
+    imageData = [ ...imageData, ...imageData ]
     const images = imageData.map(image => {
       return { src: image.src, width: image.originalWidth, height: image.originalHeight }
     })
