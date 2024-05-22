@@ -60,12 +60,12 @@ export const GalleryLayout: React.FC = () => {
       {
         src: "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/images/gallery-5.png",
         sessionUrl: "/gallery/5",
-        originalWidth: 4096, 
-        originalHeight: 2264,
-        onClickWidth: 409,
-        onClickHeight: 226,
-        tryItButtonTextColour: 'white',
-        title: "zebrafish IRF-10 DBD complex with DNA",
+        originalWidth: 8096, 
+        originalHeight: 4264,
+        onClickWidth: 1000,
+        onClickHeight: 500,
+        tryItButtonTextColour: 'grey',
+        title: "Zebrafish IRF-10 DBD complex with DNA",
         description: <>
          PDB code: <a href="https://www.rcsb.org/structure/8HCL">8HCL</a>.
         </>
