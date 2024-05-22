@@ -99,7 +99,9 @@ export const GalleryLayout: React.FC = () => {
               margin: '20px 0',
               fontFamily: 'Arial, sans-serif', // Choose the font family here
               fontSize: '36px', // Set the font size here
-              fontWeight: 'bold' // Optionally, set the font weight
+              fontWeight: 'bold',
+              textAlign: 'center', // Center the text
+              width: '100%' // Ensure the titl// Optionally, set the font weight
             }}
           >
             Moorhen Gallery
