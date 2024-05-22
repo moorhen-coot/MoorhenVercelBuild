@@ -76,8 +76,8 @@ export const GalleryLayout: React.FC = () => {
     // this reproduce multiple images
 
     // imageData = [ ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData ]
-   
-    imageData = [ ...imageData, ...imageData ]
+    
+    imageData = [ ...imageData, ...imageData ] // means that the images are duplicated twice
     const images = imageData.map(image => {
       return { src: image.src, width: image.originalWidth, height: image.originalHeight }
     })
@@ -92,6 +92,18 @@ export const GalleryLayout: React.FC = () => {
     }
 
     return <div style={{width: '100w', display: 'flex', justifyContent: "center"}}>
+           <Typography
+            variant="h4"
+            component="h1"
+            style={{
+              margin: '20px 0',
+              fontFamily: 'Arial, sans-serif', // Choose the font family here
+              fontSize: '36px', // Set the font size here
+              fontWeight: 'bold' // Optionally, set the font weight
+            }}
+          >
+            Moorhen Gallery
+          </Typography>
         <div style={{width: '99vw', overflowX: 'hidden', overflowY: 'auto'}}>
           <Gallery images={images} enableImageSelection={false} onClick={handleFigureClick}/>
         </div>
