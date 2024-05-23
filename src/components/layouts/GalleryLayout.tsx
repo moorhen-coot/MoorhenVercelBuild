@@ -94,12 +94,12 @@ export const GalleryLayout: React.FC = () => {
               variant="h4"
               component="h1"
               style={{
-                marginBottom: '20px',
+                marginBottom: '40px',
                 fontFamily: 'PopArt, cursive', // Use the imported retro pop font here
                 fontSize: '45px', // Adjust the font size as needed
                 fontWeight: 'bold', // Optionally, set the font weight
                 textAlign: 'center', 
-                color: 'magenta',
+                color: 'orange',
                 // Center the text
               }}
           >
