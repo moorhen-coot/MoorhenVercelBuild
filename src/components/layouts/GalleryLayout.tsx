@@ -90,18 +90,18 @@ export const GalleryLayout: React.FC = () => {
       setImageIndex(currentIndex)
       setShowModal(true)
     }
-
-    return <div style={{width: '100w', display: 'flex', justifyContent: "center"}}>
+// <div style={{width: '100w', display: 'flex', justifyContent: "center"}}>
+    return <div style={{ width: '100vw', display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '20px' }}>
            <Typography
             variant="h4"
             component="h1"
             style={{
-              margin: '20px 0',
+              marginBottom: '20px',
               fontFamily: 'Arial, sans-serif', // Choose the font family here
               fontSize: '36px', // Set the font size here
               fontWeight: 'bold',
               textAlign: 'center', // Center the text
-              width: '100%' // Ensure the titl// Optionally, set the font weight
+               // Ensure the titl// Optionally, set the font weight
             }}
           >
             Moorhen Gallery
