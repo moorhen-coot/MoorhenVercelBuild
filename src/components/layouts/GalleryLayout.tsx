@@ -95,14 +95,15 @@ export const GalleryLayout: React.FC = () => {
            <Typography
             variant="h4"
             component="h1"
-            style={{
-              marginBottom: '20px',
-              fontFamily: 'Arial, sans-serif', // Choose the font family here
-              fontSize: '36px', // Set the font size here
-              fontWeight: 'bold',
-              textAlign: 'center', // Center the text
-               // Ensure the titl// Optionally, set the font weight
-            }}
+            className="gallery-title"
+            // style={{
+            //   marginBottom: '20px',
+            //   fontFamily: 'Arial, sans-serif', // Choose the font family here
+            //   fontSize: '36px', // Set the font size here
+            //   fontWeight: 'bold',
+            //   textAlign: 'center', // Center the text
+            //    // Ensure the titl// Optionally, set the font weight
+            // }}
           >
             Moorhen Gallery
           </Typography>

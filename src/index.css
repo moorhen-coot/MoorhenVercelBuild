@@ -67,3 +67,19 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+@font-face {
+  font-family: 'PopArt';
+  src: url('./fonts/PopArt-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Define styles for the gallery title */
+.gallery-title {
+  font-family: 'PopArt', cursive; /* Use the imported retro pop font here */
+  font-size: 36px; /* Adjust the font size as needed */
+  font-weight: bold; /* Optionally, set the font weight */
+  text-align: center; /* Center the text */
+  margin-top: 20px; /* Add some top margin for spacing */
+}
