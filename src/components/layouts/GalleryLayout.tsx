@@ -96,9 +96,11 @@ export const GalleryLayout: React.FC = () => {
               style={{
                 marginBottom: '20px',
                 fontFamily: 'PopArt, cursive', // Use the imported retro pop font here
-                fontSize: '24px', // Adjust the font size as needed
+                fontSize: '37px', // Adjust the font size as needed
                 fontWeight: 'bold', // Optionally, set the font weight
-                textAlign: 'center', // Center the text
+                textAlign: 'center', 
+                color: 'red',
+                // Center the text
               }}
           >
             Moorhen Gallery
