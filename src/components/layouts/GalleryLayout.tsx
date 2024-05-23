@@ -76,7 +76,6 @@ export const GalleryLayout: React.FC = () => {
     // this reproduce multiple images
 
     // imageData = [ ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData ]
-    
     imageData = [ ...imageData, ...imageData ] // means that the images are duplicated twice
     const images = imageData.map(image => {
       return { src: image.src, width: image.originalWidth, height: image.originalHeight }
@@ -90,20 +89,17 @@ export const GalleryLayout: React.FC = () => {
       setImageIndex(currentIndex)
       setShowModal(true)
     }
-// <div style={{width: '100w', display: 'flex', justifyContent: "center"}}>
     return <div style={{ width: '100vw', display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '20px' }}>
            <Typography
-            variant="h4"
-            component="h1"
-            className="gallery-title"
-            // style={{
-            //   marginBottom: '20px',
-            //   fontFamily: 'Arial, sans-serif', // Choose the font family here
-            //   fontSize: '36px', // Set the font size here
-            //   fontWeight: 'bold',
-            //   textAlign: 'center', // Center the text
-            //    // Ensure the titl// Optionally, set the font weight
-            // }}
+              variant="h4"
+              component="h1"
+              style={{
+                marginBottom: '20px',
+                fontFamily: 'PopArt, cursive', // Use the imported retro pop font here
+                fontSize: '24px', // Adjust the font size as needed
+                fontWeight: 'bold', // Optionally, set the font weight
+                textAlign: 'center', // Center the text
+              }}
           >
             Moorhen Gallery
           </Typography>
