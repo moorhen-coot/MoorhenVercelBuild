@@ -99,7 +99,7 @@ export const GalleryLayout: React.FC = () => {
                 fontSize: '45px', // Adjust the font size as needed
                 fontWeight: 'bold', // Optionally, set the font weight
                 textAlign: 'center', 
-                color: 'orange',
+                color: 'coral',
                 // Center the text
               }}
           >
