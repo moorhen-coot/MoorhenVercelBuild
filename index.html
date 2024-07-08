@@ -30,7 +30,22 @@
           .catch((e) => {
             console.log("CCP4 problem :(");
             console.log(e);
-            alert("There was a problem loading the CCP4 module. Please clear your browser's cached data and try again. If the problem persists contact moorhen-group@york.ac.uk.");
+          });
+          createRSRModule({
+            print(t) {
+              console.log(["output", t]);
+            },
+            printErr(t) {
+              console.log(["output", t]);
+            }
+          })
+          .then((returnedModule) => {
+              window.cootModule = returnedModule;
+              const cootModuleAttachedEvent = new CustomEvent("cootModuleAttached", { })
+              document.dispatchEvent(cootModuleAttachedEvent);
+          })
+          .catch((e) => {
+              console.log(e);
           });
         } catch (err) {
           console.err(err)
@@ -38,7 +53,8 @@
         }
       }
     </script>
-    <script src="/baby-gru/web_example.js" onerror="alert('There was a problem loading WASM. Please clear your browsers cached data and try again. If the problem persists contact moorhen-group@york.ac.uk.')"></script>
+    <script src="/web_example.js" onerror="alert('There was a problem loading WASM. Please clear your browsers cached data and try again. If the problem persists contact moorhen-group@york.ac.uk.')"></script>
+    <script src="/moorhen.js" onerror="alert('There was a problem loading WASM. Please clear your browsers cached data and try again. If the problem persists contact moorhen-group@york.ac.uk.')"></script>
   </head>
 
   <body>
