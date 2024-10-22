@@ -15,7 +15,7 @@ export const LigandLayout: React.FC = () => {
 
     const { ligandName } = useParams()
 
-    const urlPrefix = ""
+    const urlPrefix = "/baby-gru"
     const baseUrl = 'https://raw.githubusercontent.com/MRC-LMB-ComputationalStructuralBiology/monomers/master'
 
     const loadLigand = async (ligandName: string) => {

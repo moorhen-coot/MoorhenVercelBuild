@@ -23,7 +23,7 @@ export const GallerySessionLayout: React.FC = () => {
     
     const { galleryId } = useParams()
 
-    const urlPrefix = ""
+    const urlPrefix = "/baby-gru"
     const monomerLibraryPath = "https://raw.githubusercontent.com/MRC-LMB-ComputationalStructuralBiology/monomers/master/"
     const sessionUrls: {[key: string]: string} = {
         "1": "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/sessions/gallery-1.pb",
