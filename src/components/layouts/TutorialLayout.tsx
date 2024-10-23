@@ -16,9 +16,9 @@ export const TutorialLayout: React.FC = () => {
     
     const { tutorialNumber } = useParams()
 
-    const urlPrefix = ""
+    const urlPrefix = "/baby-gru"
     const monomerLibraryPath = "https://raw.githubusercontent.com/MRC-LMB-ComputationalStructuralBiology/monomers/master/"
-    const baseUrl = 'https://raw.githubusercontent.com/moorhen-coot/moorhen/master/baby-gru/public/tutorials'
+    const baseUrl = 'https://raw.githubusercontent.com/moorhen-coot/moorhen/master/baby-gru/public/baby-gru/tutorials'
 
     const tutorialMtzColumnNames: { [key: string]: any } = {
         1: { F: "FWT", PHI: "PHWT", Fobs: 'FP', SigFobs: 'SIGFP', FreeR: 'FREE' },

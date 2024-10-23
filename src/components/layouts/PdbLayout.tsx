@@ -16,7 +16,7 @@ export const PdbLayout: React.FC = () => {
 
     const { pdbId } = useParams()
 
-    const urlPrefix = ""
+    const urlPrefix = "/baby-gru"
     const baseUrl = 'https://www.ebi.ac.uk/pdbe/entry-files'
     const monomerLibraryPath = "https://raw.githubusercontent.com/MRC-LMB-ComputationalStructuralBiology/monomers/master/"
 
