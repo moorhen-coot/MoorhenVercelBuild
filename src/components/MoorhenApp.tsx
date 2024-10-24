@@ -6,6 +6,7 @@ import { RootLayout } from './layouts/RootLayout';
 import { PdbLayout } from './layouts/PdbLayout';
 import { TutorialLayout } from './layouts/TutorialLayout';
 import { LigandLayout } from './layouts/LigandLayout';
+import { PubChemLayout } from './layouts/PubChemLayout';
 import { GalleryLayout } from './layouts/GalleryLayout';
 import { GallerySessionLayout } from './layouts/GallerySessionLayout';
 import React from 'react'
@@ -33,6 +34,10 @@ export const MoorhenApp: React.FC = () => {
             {
                 path: "/tutorial/:tutorialNumber",
                 element: <TutorialLayout />,
+            },
+            {
+                path: "/pubchem/:pubChemSearch",
+                element: <PubChemLayout />,
             },
             {
                 path: "/ligand/:ligandName",
