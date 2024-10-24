@@ -30,8 +30,8 @@ export const PubChemLayout: React.FC = () => {
 
         const molSearchUrl = "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/"+pubChemSearch+"/cids/TXT"
         const moleculeSearchResponse = await fetch(molSearchUrl)
-        const moleculeId = await moleculeSearchResponse.text()
-        const smilesSearchUrl = "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/"+moleculeId+"/property/CanonicalSMILES/TXT"
+        const moleculeIds = await moleculeSearchResponse.text()
+        const smilesSearchUrl = "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/"+moleculeIds.split("\n")[0]+"/property/CanonicalSMILES/TXT"
         const smilesResponse = await fetch(smilesSearchUrl)
         const smilesText = await smilesResponse.text()
 
