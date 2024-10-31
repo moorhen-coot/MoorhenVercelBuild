@@ -1,4 +1,4 @@
-import { MoorhenContainer, MoorhenMolecule, addMolecule, MoorhenReduxStore } from 'moorhen'
+import { MoorhenContainer, MoorhenMolecule, addMolecule, MoorhenReduxStore, MoorhenColourRule, getMultiColourRuleArgs } from 'moorhen'
 import { webGL } from 'moorhen/types/mgWebGL';
 import { moorhen } from 'moorhen/types/moorhen';
 import { useEffect, useRef } from 'react';
@@ -10,7 +10,7 @@ export const AFDBLayout: React.FC = () => {
     const cootInitialized = useSelector((state: moorhen.State) => state.generalStates.cootInitialized)
     const defaultBondSmoothness = useSelector((state: moorhen.State) => state.sceneSettings.defaultBondSmoothness)
     const backgroundColor = useSelector((state: moorhen.State) => state.sceneSettings.backgroundColor)
-    
+
     const glRef = useRef<webGL.MGWebGL | null>(null)
     const commandCentre = useRef<moorhen.CommandCentre | null>(null)
 
@@ -27,10 +27,20 @@ export const AFDBLayout: React.FC = () => {
             await newMolecule.loadToCootFromURL(url, molName)
             if (newMolecule.molNo === -1) {
                 throw new Error("Cannot read the fetched molecule...")
-            } 
+            }
+            const newColourRule = new MoorhenColourRule(
+                'af2-plddt', "/*/*/*/*", "#ffffff", commandCentre, true
+            )
+            newColourRule.setLabel("PLDDT")
+            const ruleArgs = await getMultiColourRuleArgs(newMolecule, 'af2-plddt')
+            newColourRule.setArgs([ ruleArgs ])
+            newColourRule.setParentMolecule(newMolecule)
+            newMolecule.defaultColourRules = [ newColourRule ]
+
             await newMolecule.fetchIfDirtyAndDraw('CRs')
             await newMolecule.addRepresentation('ligands', '/*/*/*/*')
             await newMolecule.centreOn('/*/*/*/*', true, true)
+
             dispatch(addMolecule(newMolecule))
         } catch (err) {
             console.warn(err)
