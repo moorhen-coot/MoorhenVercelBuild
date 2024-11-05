@@ -27,7 +27,11 @@ export const CODLayout: React.FC = () => {
         newMolecule.setBackgroundColour(backgroundColor)
         newMolecule.defaultBondOptions.smoothness = defaultBondSmoothness
         try {
-            await newMolecule.loadToCootFromURL(url, codid)
+            const response = await fetch(url)
+            if (response.ok) {
+                const coordData = await response.text()
+                await newMolecule.loadToCootFromString(coordData, codid, true)
+            }
             if (newMolecule.molNo === -1) {
                 throw new Error("Cannot read the fetched molecule...")
             } 
