@@ -61,7 +61,7 @@ export const CODLayout: React.FC = () => {
 
         if (result.data.result.status === "Completed" && result.data.result.result !== -1) {
             newMolecule.molNo = result.data.result.result
-            newMolecule.name = "LIG"
+            newMolecule.name = codid
             newMolecule.setBackgroundColour(glRef.current.background_colour)
             newMolecule.defaultBondOptions.smoothness = defaultBondSmoothness
             newMolecule.coordsFormat = 'mmcif'
