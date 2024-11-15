@@ -17,6 +17,7 @@ export const LigandLayout: React.FC = () => {
 
     const urlPrefix = "/baby-gru"
     const baseUrl = 'https://raw.githubusercontent.com/MRC-LMB-ComputationalStructuralBiology/monomers/master'
+    const pdbeBaseUrl = 'https://www.ebi.ac.uk/pdbe/static/files/pdbechem_v2'
 
     const loadLigand = async (ligandName: string) => {
         if (!glRef.current || !commandCentre.current) {
@@ -36,8 +37,14 @@ export const LigandLayout: React.FC = () => {
         if (response.ok) {
             dictContent = await response.text();
         } else {
-            console.log(`Unable to fetch ligand dictionary ${ligandName}`)
-            return
+            const url2 = `${pdbeBaseUrl}/${ligandName.toUpperCase()}.cif`
+            const response2 = await fetch(url2);
+            if (response2.ok) {
+                dictContent = await response2.text();
+            } else {
+                console.log(`Unable to fetch ligand dictionary ${ligandName}`)
+                return
+            }
         }
         
         await commandCentre.current.cootCommand({
