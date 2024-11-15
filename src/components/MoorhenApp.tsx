@@ -4,8 +4,12 @@ import { Provider } from 'react-redux';
 import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { RootLayout } from './layouts/RootLayout';
 import { PdbLayout } from './layouts/PdbLayout';
+import { AFDBLayout } from './layouts/AFDBLayout';
+import { CODLayout } from './layouts/CODLayout';
 import { TutorialLayout } from './layouts/TutorialLayout';
 import { LigandLayout } from './layouts/LigandLayout';
+import { PubChemLayout } from './layouts/PubChemLayout';
+import { SmilesLayout } from './layouts/SmilesLayout';
 import { GalleryLayout } from './layouts/GalleryLayout';
 import { GallerySessionLayout } from './layouts/GallerySessionLayout';
 import React from 'react'
@@ -35,6 +39,14 @@ export const MoorhenApp: React.FC = () => {
                 element: <TutorialLayout />,
             },
             {
+                path: "/smiles/:smilesSearch",
+                element: <SmilesLayout />,
+            },
+            {
+                path: "/pubchem/:pubChemSearch",
+                element: <PubChemLayout />,
+            },
+            {
                 path: "/ligand/:ligandName",
                 element: <LigandLayout />,
             },
@@ -45,6 +57,14 @@ export const MoorhenApp: React.FC = () => {
             {
                 path: "/monomer/:ligandName",
                 element: <LigandLayout />,
+            },
+            {
+                path: "/afdb/:uniprotID",
+                element: <AFDBLayout />,
+            },
+            {
+                path: "/codsearch/:codid",
+                element: <CODLayout />,
             },
             {
                 path: "gallery",
