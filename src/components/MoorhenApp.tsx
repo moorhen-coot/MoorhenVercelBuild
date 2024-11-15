@@ -5,6 +5,7 @@ import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { RootLayout } from './layouts/RootLayout';
 import { PdbLayout } from './layouts/PdbLayout';
 import { AFDBLayout } from './layouts/AFDBLayout';
+import { CODLayout } from './layouts/CODLayout';
 import { TutorialLayout } from './layouts/TutorialLayout';
 import { LigandLayout } from './layouts/LigandLayout';
 import { PubChemLayout } from './layouts/PubChemLayout';
@@ -60,6 +61,10 @@ export const MoorhenApp: React.FC = () => {
             {
                 path: "/afdb/:uniprotID",
                 element: <AFDBLayout />,
+            },
+            {
+                path: "/codsearch/:codid",
+                element: <CODLayout />,
             },
             {
                 path: "gallery",
