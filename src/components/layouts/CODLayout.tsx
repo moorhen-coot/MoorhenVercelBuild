@@ -17,8 +17,8 @@ export const CODLayout: React.FC = () => {
     const { codid } = useParams()
 
     const urlPrefix = "/baby-gru"
-    const baseUrl = 'https://www.crystallography.net/cod'
-    //const baseUrl = '/cod'
+    //const baseUrl = 'https://www.crystallography.net/cod'
+    const baseUrl = '/cod'
 
     const loadCOD = async (codid: string) => {
 
