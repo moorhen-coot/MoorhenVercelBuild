@@ -31,9 +31,14 @@ export const CODLayout: React.FC = () => {
         }
 
         const url = `${baseUrl}/${codid}.cif`
-            const response = await fetch(url)
-            //if (response.ok) {
-            const coordData = await response.text()
+        console.error("url:")
+        console.error(url)
+        const response = await fetch(url)
+        console.error("response:")
+        console.error(response)
+        const coordData = await response.text()
+        console.error("coordData:")
+        console.error(coordData)
 
         const cod_to_cif_response = await commandCentre.current.cootCommand({
             command: 'SmallMoleculeCifToMMCif',
