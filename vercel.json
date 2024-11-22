@@ -4,8 +4,8 @@
     "devCommand": "npm install && cp -r ./node_modules/moorhen/public/* ./public/ && npx vite",
     "outputDirectory": "dist",
     "rewrites":  [
-        { "source": "/(.*)", "destination": "/" },
-        { "source": "/cod/", "destination": "https://www.crystallography.net" }
+        { "source": "/cod/:path*", "destination": "https://www.crystallography.net/:path*" },
+        { "source": "/(.*)", "destination": "/" }
     ],
     "headers": [
         {
