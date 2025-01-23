@@ -40,15 +40,16 @@ export const CODLayout: React.FC = () => {
         console.error("coordData:")
         console.error(coordData)
 
+        const anyMolNo = -999999
+
         const cod_to_cif_response = await commandCentre.current.cootCommand({
             command: 'SmallMoleculeCifToMMCif',
             commandArgs: [coordData],
             returnType: 'str_str_pair'
         }, true) as moorhen.WorkerResponse<libcootApi.PairType<string, string>>
-        const dictContent = cod_to_cif_response.data.result.result.second
 
-        const anyMolNo = -999999
-        const newMolecule = new MoorhenMolecule(commandCentre, glRef, MoorhenReduxStore, baseUrl)
+        const dictContent = cod_to_cif_response.data.result.result.second
+        const coordContent = cod_to_cif_response.data.result.result.first
 
         await commandCentre.current.cootCommand({
             returnType: "status",
@@ -56,16 +57,11 @@ export const CODLayout: React.FC = () => {
             commandArgs: [dictContent, anyMolNo],
         }, false)
 
-        const result = await commandCentre.current.cootCommand({
-            returnType: 'status',
-            command: 'get_monomer_and_position_at',
-            commandArgs: ["UNK", anyMolNo,
-                ...glRef.current.origin.map(coord => -coord)
-            ]
-        }, true) as moorhen.WorkerResponse<number>
+        const newMolecule = new MoorhenMolecule(commandCentre, glRef, MoorhenReduxStore, baseUrl)
+        const result = await newMolecule.loadToCootFromString(coordContent, codid);
+        console.error(result)
 
-        if (result.data.result.status === "Completed" && result.data.result.result !== -1) {
-            newMolecule.molNo = result.data.result.result
+        if (result) {
             newMolecule.name = codid
             newMolecule.setBackgroundColour(glRef.current.background_colour)
             newMolecule.defaultBondOptions.smoothness = defaultBondSmoothness
