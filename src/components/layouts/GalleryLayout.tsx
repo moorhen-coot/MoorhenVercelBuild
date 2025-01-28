@@ -1,4 +1,5 @@
-import { Gallery } from "react-grid-gallery";
+//import { Gallery } from "react-grid-gallery";
+import { PhotoAlbum } from 'react-photo-album';
 import { useCallback, useState } from "react";
 import { Box, IconButton, Typography, Modal } from "@mui/material";
 import { PlayCircleOutlined } from '@mui/icons-material';
@@ -10,105 +11,333 @@ export const GalleryLayout: React.FC = () => {
 
     let imageData = [
       {
+        src: "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/images/gallery-cover.png",
+        sessionUrl: "/gallery/cover",
+        originalWidth: 2214,
+        originalHeight: 1720,
+        onClickWidth: 221,
+        onClickHeight: 172,
+        tryItButtonTextColour: 'grey',
+        title: "",
+        description:<>
+        PDB code: <a href="https://www.rcsb.org/structure/...">...</a>.
+        <br />
+        <strong>Click on the play button to load the Moorhen session!</strong>
+      </>
+      },
+      {
         src: "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/images/gallery-1.png",
         sessionUrl: "/gallery/1",
-        originalWidth: 4096, 
-        originalHeight: 2116,
+        originalWidth: 4096,
+        originalHeight: 2283,
         onClickWidth: 409,
-        onClickHeight: 211,
+        onClickHeight: 228,
         tryItButtonTextColour: 'white',
-        title: "Lore ipsum",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dignissim, nisl non feugiat viverra, justo ex pharetra mauris, vel iaculis nisi mi non nulla. Proin vestibulum nisl at vulputate vestibulum. Proin commodo urna vitae elit aliquam porta. Pellentesque metus erat, posuere non volutpat vitae, tincidunt eget est. Mauris egestas sed ipsum vitae aliquet. Integer in augue porta, gravida nulla eu, laoreet orci. Vivamus placerat, nisl et commodo blandit, lectus dui imperdiet nibh, in volutpat sem leo a augue. Nunc auctor sem id arcu tempus, eu ornare dui aliquam. Curabitur imperdiet tellus id quam posuere, eu volutpat magna pulvinar. Vivamus aliquam, nibh sit amet venenatis blandit, mi tortor commodo libero, in volutpat neque nibh in diam."
+        title: "Hen egg white lysozyme",
+        description: <>
+          The lysozyme is represented as molecular surfarce. The tetramethyl lysine (DM0) and dimethyl lysine (MLY) molecules are highlighted as balls and sticks.
+          Water molecules are represented as balls. The fluorescent effect is obtained by using a combination of lighting settings: Specular, Diffuse, Ambient Occlusion.
+          These are available from the <strong>View - Scene settings </strong>menu. 
+          PDB code: <a href="https://www.rcsb.org/structure/132L">132L</a>. 
+          <br />
+          <strong>Click on the play button to load the Moorhen session!</strong>
+        </>
       },
       {
         src: "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/images/gallery-2.png",
         sessionUrl: "/gallery/2",
-        originalWidth: 4096, 
+        originalWidth: 4096,
         originalHeight: 2116,
         onClickWidth: 409,
         onClickHeight: 211,
         tryItButtonTextColour: 'white',
-        title: "Lore ipsum",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dignissim, nisl non feugiat viverra, justo ex pharetra mauris, vel iaculis nisi mi non nulla. Proin vestibulum nisl at vulputate vestibulum. Proin commodo urna vitae elit aliquam porta. Pellentesque metus erat, posuere non volutpat vitae, tincidunt eget est. Mauris egestas sed ipsum vitae aliquet. Integer in augue porta, gravida nulla eu, laoreet orci. Vivamus placerat, nisl et commodo blandit, lectus dui imperdiet nibh, in volutpat sem leo a augue. Nunc auctor sem id arcu tempus, eu ornare dui aliquam. Curabitur imperdiet tellus id quam posuere, eu volutpat magna pulvinar. Vivamus aliquam, nibh sit amet venenatis blandit, mi tortor commodo libero, in volutpat neque nibh in diam."
+        title: "Chikungunya virus replication complex",
+        description: <>
+          The model is represented as spheres coloured by atoms.
+          The cavities are highlighted using <strong> Ambient occlusion </strong> which can be enabled in the <strong> View - Scene settings </strong> menu
+          PDB code: <a href="https://www.rcsb.org/structure/7Y38">7Y38</a>.
+          <br />
+          <strong>Click on the play button to load the Moorhen session!</strong>
+        </>
       },
       {
         src: "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/images/gallery-3.png",
         sessionUrl: "/gallery/3",
-        originalWidth: 2890, 
-        originalHeight: 1860,
-        onClickWidth: 289,
-        onClickHeight: 186,
-        tryItButtonTextColour: 'white',
+        originalWidth: 4096,
+        originalHeight: 2283,
+        onClickWidth: 409,
+        onClickHeight: 228,
+        tryItButtonTextColour: 'grey',
         title: "NEAT domain from Staphylococcus aureus in complex with heme",
         description: <>
+          The model is shown as a molecular surface, with the map masked around the HEME and depicted as a wireframe. 
+          The HEME is represented as balls and sticks. The shiny effect is achieved by adjusting the lighting settings, combining Ambient, Specular, and Diffuse options.
+          These are available from the <strong>View - Scene settings </strong>menu. 
          PDB code: <a href="https://www.rcsb.org/structure/2Z6F">2Z6F</a>.
+         <br />
+         <strong>Click on the play button to load the Moorhen session!</strong>
         </>
       },
       {
         src: "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/images/gallery-4.png",
         sessionUrl: "/gallery/4",
-        originalWidth: 4096, 
-        originalHeight: 2264,
+        originalWidth: 4096,
+        originalHeight:2264,
         onClickWidth: 409,
         onClickHeight: 226,
         tryItButtonTextColour: 'grey',
         title: "Human serotonin 5-HT3A receptor in complex with vortioxetine",
         description: <>
+         The 5-HT3A receptor pentamer subunits are shown as ribbons, with the vortioxetine ligands represented as spheres. 
+         NAG molecules are represented as glyco-blocks.
          PDB code: <a href="https://www.rcsb.org/structure/8BLA">8BLA</a>.
+         <br />
+         <strong>Click on the play button to load the Moorhen session!</strong>
         </>
       },
       {
         src: "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/images/gallery-5.png",
         sessionUrl: "/gallery/5",
-        originalWidth: 8096, 
-        originalHeight: 4264,
-        onClickWidth: 809,
-        onClickHeight: 426,
+        originalWidth: 5096,
+        originalHeight: 3264,
+        onClickWidth: 409,
+        onClickHeight: 226,
         tryItButtonTextColour: 'grey',
         title: "Zebrafish IRF-10 DBD complex with DNA",
         description: <>
+         The DNA molecule is shown as ribbons, with the bases represented as disks and the phosphate groups as balls and sticks.
+         The protein is represented as ribbons. The side chains of residues in interaction with DNA are represented as balls and sticks.
          PDB code: <a href="https://www.rcsb.org/structure/8HCL">8HCL</a>.
+         <br />
+         <strong>Click on the play button to load the Moorhen session!</strong>
         </>
       },
+      {
+        src: "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/images/gallery-6.png",
+        sessionUrl: "/gallery/6",
+        originalWidth: 536,
+        originalHeight: 449,
+        onClickWidth: 306,
+        onClickHeight: 249,
+        tryItButtonTextColour: 'white',
+        title: "Bordetella pertussis virulence factor P.69 pertactin",
+        description: <>
+         The beta-helix structure is represented as ribbons, with one strand highlighted in gold.
+         The background color is teal and can be adjusted in the <strong>View - Scene Settings</strong> menu.
+         PDB code: <a href="https://www.rcsb.org/structure/1DAB">1DAB</a>.
+         <br />
+         <strong>Click on the play button to load the Moorhen session!</strong>
+        </>
+      },
+      {
+        src: "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/images/gallery-7.png",
+        sessionUrl: "/gallery/7",
+        originalWidth: 651,
+        originalHeight: 635,
+        onClickWidth: 250,
+        onClickHeight: 250,
+        tryItButtonTextColour: 'white',
+        title: "Peripheral light-harvesting complex from Rhodopseudomonas acidophila strain 10050",
+        description: <>
+         The model is represented as ribbons and ball and sticks coloured by chains. 
+         The perspective projection can be enabled in the <strong> View - Other settings </strong> menu.
+         PDB code: <a href="https://www.rcsb.org/structure/1KZU">1KZU</a>.
+         <br />
+         <strong>Click on the play button to load the Moorhen session!</strong>
+        </>
+      },
+      {
+        src: "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/images/gallery-8.png",
+        sessionUrl: "/gallery/8",
+        originalWidth: 4096, 
+        originalHeight: 2959,
+        onClickWidth: 309,
+        onClickHeight: 225,
+        tryItButtonTextColour: 'white',
+        title: "Cyclin-dependent kinase",
+        description: <>
+         The kinase is represented as spheres coloured by atoms.
+         The cartoon effect is obtained by using <strong>Edge detection</strong> available from the <strong>View - Scene settings </strong>menu.
+         PDB code: <a href="https://www.rcsb.org/structure/2VTQ">2VTQ</a>.
+         <br />
+         <strong>Click on the play button to load the Moorhen session!</strong>
+        </>
+      },
+      {
+        src: "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/images/gallery-9.png",
+        sessionUrl: "/gallery/9",
+        originalWidth: 4096, 
+        originalHeight: 2286,
+        onClickWidth: 309,
+        onClickHeight: 225,
+        tryItButtonTextColour: 'white',
+        title: "PTH-bound human PTH1R in complex with Gs (class2)",
+        description: <>
+         cryo-EM model and map of PTH-PTH1R-Gs.
+         The map is masked by chains, with each map displayed as a semi-transparent surface. 
+         The model is represented as ribbons.
+         PDB code: <a href="https://www.rcsb.org/structure/7VVL">7VVL</a>.
+         <br />
+         <strong>Click on the play button to load the Moorhen session!</strong>
+        </>
+      },
+      {
+        src: "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/images/gallery-10.png",
+        sessionUrl: "/gallery/10",
+        originalWidth: 4096, 
+        originalHeight: 2182,
+        onClickWidth: 309,
+        onClickHeight: 225,
+        tryItButtonTextColour: 'grey',
+        title: "Scorpion protein toxin",
+        description: <>
+         High resolution X-ray structure of a scorpion protein toxin.
+         The map is depicted as a wireframe, with another map inside shown as a surface to illustrate the atomic positions. 
+         The model is displayed as balls and sticks, with alternate conformations distinguished by different colors.
+         PDB code: <a href="https://www.rcsb.org/structure/1AHO">1AHO</a>.
+         <br />
+         <strong>Click on the play button to load the Moorhen session!</strong>
+        </>
+      },
+      {
+        src: "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/images/gallery-11.png",
+        sessionUrl: "/gallery/11",
+        originalWidth: 4096, 
+        originalHeight: 2182,
+        onClickWidth: 309,
+        onClickHeight: 225,
+        tryItButtonTextColour: 'white',
+        title: "Nicotinic acetylcholine receptor 1 subunit bound to alpha-bungarotoxin",
+        description: <>
+         The model is displayed as balls and sticks and the map is depicted as a wireframe.
+         NAG and MAN molecules are represented as glyco-blocks.
+         PDB code: <a href="https://www.rcsb.org/structure/2QC1">2QC1</a>.
+         <br />
+         <strong>Click on the play button to load the Moorhen session!</strong>
+        </>
+      },
+    ];
+
+    let reorderedimageData = [
+      imageData[5],
+      imageData[1],
+      imageData[6],
+      imageData[3],
+      imageData[2],
+      imageData[4],
+      imageData[7],
+      imageData[8],
+      imageData[9],
+      imageData[10],
+      imageData[11],
     ];
 
     // FIXME: We need more images here...
     // this reproduce multiple images
 
-    // imageData = [ ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData ]
-    imageData = [ ...imageData, ...imageData ] // means that the images are duplicated twice
-    const images = imageData.map(image => {
-      return { src: image.src, width: image.originalWidth, height: image.originalHeight }
-    })
+    //imageData = [ ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData ]
+    //reorderedimageData = [ ...reorderedimageData, ...reorderedimageData, ...reorderedimageData, ...reorderedimageData ] // means that the images are duplicated twice
+    //const images = imageData.map(image => {
+      //return { src: image.src, width: image.originalWidth, height: image.originalHeight }
+    //})
+    const photos = reorderedimageData.map(image => ({
+      src: image.src,
+      width: image.originalWidth,
+      height: image.originalHeight
+    }));
 
     const handleSessionLoad = useCallback(() => {
-        window.location.href = imageData[imageIndex].sessionUrl as string
-    }, [imageIndex])
+        window.location.href = reorderedimageData[imageIndex].sessionUrl as string
+    }, [imageIndex, reorderedimageData]);
 
     const handleFigureClick = (currentIndex: number) => {
       setImageIndex(currentIndex)
       setShowModal(true)
     }
-    return <div style={{ width: '100vw', display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '20px' }}>
-           <Typography
-              variant="h4"
-              component="h1"
-              style={{
-                marginBottom: '40px',
-                fontFamily: 'PopArt, cursive', // Use the imported retro pop font here
-                fontSize: '53px', // Adjust the font size as needed
-                fontWeight: 'bold', // Optionally, set the font weight
-                textAlign: 'center', 
-                color: 'fuxia',
-                // Center the text
-              }}
-          >
-            Moorhen Gallery
-          </Typography>
-          <div style={{width: '99vw', overflowX: 'hidden', overflowY: 'auto'}}>
-            <Gallery images={images} enableImageSelection={false} onClick={handleFigureClick}/>
+    return <div style={{
+            width: '100wh',
+            //margin: '0 auto',
+            paddingLeft: '60px', // change the space around the grid
+            paddingRight: '60px',
+            boxSizing: 'border-box',
+            //background: 'linear-gradient(to right, #ff6b6b, #556270)'
+            //background: '#556270'
+            }}>
+          <div style={{
+                     display: 'flex',
+                     justifyContent: 'space-between',
+                     alignItems: 'center',
+                     marginBottom: '60px',
+                     marginTop: '60px'
+                    }}>
+
+            <div style={{ flex: 1}}>
+              <Typography
+                variant="h5"
+                style={{
+                       marginBottom: '20px',
+                       marginTop: '20px',
+                       fontFamily: 'TT_Chocolates_demibold, cursive',
+                       fontSize: '90px',
+                       paddingTop: '150px',
+                       paddingBottom: '30px',
+                       paddingLeft: '50px'
+                       }}>
+               Moorhen Gallery
+              </Typography>
+              <Typography
+                variant="body1"
+                style={{
+                      fontFamily: 'Inconsolata, cursive',
+                      textAlign: 'center',
+                      paddingRight: '30px',
+                      fontSize: '25px'}}>
+                <> Screenshots provided by <a href="https://moorhen.org">moorhen.org</a> </>
+              </Typography>
+            </div>
+            <img src={imageData[0].src}
+                 style={{ width: '50%', height: 'auto', cursor: 'pointer'}}
+                 //onClick={() => handleFigureClick(0 +1)}
+                 />
+
           </div>
-          <Modal open={showModal} onClose={() => setShowModal(false)} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description" style={{color: 'black', backdropFilter: "blur(5px)"}}>
+
+              {/* <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(3, 300px)', 
+                //gap: '0px', 
+                justifyContent: 'center' 
+            }}>
+                {photos.map((photo, index) => (
+                    <div key={index} style={{ 
+                        //border: '1px solid #ddd', 
+                        //borderRadius: '10px', 
+                        //boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', 
+                        overflow: 'hidden' 
+                    }}>
+                        <img src={photo.src} alt={`Photo ${index}`} style={{ 
+                            width: '100%', 
+                            height: 'auto', 
+                            //borderRadius: '10px' 
+                        }} />
+                    </div>
+                ))}
+            </div> */}
+
+          <div style={{width: '100%' , overflowX: 'hidden', overflowY: 'auto'}}>
+            <PhotoAlbum
+              layout= "masonry"
+              photos= {photos}
+              spacing={1}
+              onClick={({ index }) => handleFigureClick(index)}
+            />
+          </div>
+          <Modal open={showModal}
+           onClose={() => setShowModal(false)}
+           aria-labelledby="modal-modal-title"
+           aria-describedby="modal-modal-description"
+           style={{color: 'black', backdropFilter: "blur(5px)"}}
+          >
           <Box sx={{
               display: 'flex',
               justifyContent: 'center',
@@ -124,24 +353,29 @@ export const GalleryLayout: React.FC = () => {
               boxShadow: '0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)',
               p: 4
           }}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            {imageData[imageIndex].title}
+          <Typography id="modal-modal-title" variant="h6" component="h2" style={{fontFamily: 'Lato', textAlign: 'center', fontSize: '25px'}}>
+            {reorderedimageData[imageIndex].title}
           </Typography>
-            <div style={{display: 'flex', justifyContent: 'center'}}>
-              <img src={imageData[imageIndex].src} style={{width: imageData[imageIndex].onClickWidth, height: imageData[imageIndex].onClickHeight}}/>
-              <IconButton onClick={handleSessionLoad} style={{
-                position: 'absolute',
-                // top: 50,
-                //right:60,
-                width: imageData[imageIndex].onClickWidth,
-                height: imageData[imageIndex].onClickHeight,
-                color: imageData[imageIndex].tryItButtonTextColour,
+            <div style={{display: 'flex', justifyContent: 'center', paddingTop :'20px' }}>
+              <img src={reorderedimageData[imageIndex].src}
+               style={{width: reorderedimageData[imageIndex].onClickWidth*2, height: reorderedimageData[imageIndex].onClickHeight*2}}/>
+              <IconButton onClick={handleSessionLoad}
+                style={{
+                  position: 'absolute',
+                  top: 460,
+                  bottom:150,
+                  left: 80,
+                  width: reorderedimageData[imageIndex].onClickWidth/5,
+                  height: reorderedimageData[imageIndex].onClickHeight/5,
+                  color: reorderedimageData[imageIndex].tryItButtonTextColour,
               }}>
-                <PlayCircleOutlined style={{width: '100px', height: '100px'}}/>
+                <PlayCircleOutlined style={{width: '70px', height: '70px'}}/>
               </IconButton>
             </div>
-            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-              {imageData[imageIndex].description}
+            <Typography id="modal-modal-description"
+                        sx={{ mt: 2 }}
+                        style={{fontFamily: 'Avenir', marginLeft: '20px', fontSize: '18px'}}>
+              {reorderedimageData[imageIndex].description}
             </Typography>
           </Box>
           </Modal>

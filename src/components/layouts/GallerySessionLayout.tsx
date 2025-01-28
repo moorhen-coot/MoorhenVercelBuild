@@ -31,6 +31,12 @@ export const GallerySessionLayout: React.FC = () => {
         "3": "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/sessions/gallery-3.pb",
         "4": "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/sessions/gallery-4.pb",
         "5": "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/sessions/gallery-5.pb",
+        "6": "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/sessions/gallery-6.pb",
+        "7": "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/sessions/gallery-7.pb",
+        "8": "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/sessions/gallery-8.pb",
+        "9": "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/sessions/gallery-9.pb",
+        "10": "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/sessions/gallery-10.pb",
+        "11": "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/sessions/gallery-11.pb",
     }
 
     const loadGallerySession = async (sessionId: string) => {
