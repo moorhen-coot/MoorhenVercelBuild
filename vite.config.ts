@@ -28,16 +28,22 @@ export default defineConfig({
       },
   ],
   server: {
+      proxy: {
+        "/cod/" : {
+          "target" : "https://www.crystallography.net",
+          "changeOrigin" : true
+        },
+      },
       headers: {
           "Cross-Origin-Opener-Policy": "same-origin",
           "Cross-Origin-Embedder-Policy": "require-corp",
       },
       watch: {
           ignored: [
-              '**/public/baby-gru/monomers/**',
-              '**/public/baby-gru/wasm/**',
-              '**/public/baby-gru/pixmaps/**',
-              '**/public/baby-gru/tutorials/**'
+              '**/public/monomers/**',
+              '**/public/wasm/**',
+              '**/public/pixmaps/**',
+              '**/public/tutorials/**'
           ]
       }
   },

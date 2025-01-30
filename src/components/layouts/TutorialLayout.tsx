@@ -16,7 +16,7 @@ export const TutorialLayout: React.FC = () => {
     
     const { tutorialNumber } = useParams()
 
-    const urlPrefix = ""
+    const urlPrefix = "/baby-gru"
     const monomerLibraryPath = "https://raw.githubusercontent.com/MRC-LMB-ComputationalStructuralBiology/monomers/master/"
     const baseUrl = 'https://raw.githubusercontent.com/moorhen-coot/moorhen/master/baby-gru/public/baby-gru/tutorials'
 
