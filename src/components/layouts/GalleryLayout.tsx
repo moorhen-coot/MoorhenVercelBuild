@@ -37,8 +37,9 @@ export const GalleryLayout: React.FC = () => {
         description: <>
           The lysozyme is represented as molecular surfarce. The tetramethyl lysine (DM0) and dimethyl lysine (MLY) molecules are highlighted as balls and sticks.
           Water molecules are represented as balls. The fluorescent effect is obtained by using a combination of lighting settings: Specular, Diffuse, Ambient Occlusion.
-          These are available from the <strong>View - Scene settings </strong>menu. 
-          PDB code: <a href="https://www.rcsb.org/structure/132L">132L</a>. 
+          These are available from the <strong>View - Scene settings</strong> menu.
+          <br />
+          PDB code: <a href="https://www.rcsb.org/structure/132L">132L</a>.
           <br />
           <strong>Click on the play button to load the Moorhen session!</strong>
         </>
@@ -48,13 +49,14 @@ export const GalleryLayout: React.FC = () => {
         sessionUrl: "/gallery/2",
         originalWidth: 4096,
         originalHeight: 2116,
-        onClickWidth: 409,
-        onClickHeight: 211,
+        onClickWidth: 419,
+        onClickHeight: 220, //211
         tryItButtonTextColour: 'white',
         title: "Chikungunya virus replication complex",
         description: <>
           The model is represented as spheres coloured by atoms.
-          The cavities are highlighted using <strong> Ambient occlusion </strong> which can be enabled in the <strong> View - Scene settings </strong> menu
+          The cavities are highlighted using <strong>Ambient occlusion</strong> which can be enabled in the <strong>View - Scene settings</strong> menu.
+          <br />
           PDB code: <a href="https://www.rcsb.org/structure/7Y38">7Y38</a>.
           <br />
           <strong>Click on the play button to load the Moorhen session!</strong>
@@ -70,9 +72,9 @@ export const GalleryLayout: React.FC = () => {
         tryItButtonTextColour: 'grey',
         title: "NEAT domain from Staphylococcus aureus in complex with heme",
         description: <>
-          The model is shown as a molecular surface, with the map masked around the HEME and depicted as a wireframe. 
+          The model is shown as a molecular surface, with the map masked around the HEME and depicted as a wireframe.
           The HEME is represented as balls and sticks. The shiny effect is achieved by adjusting the lighting settings, combining Ambient, Specular, and Diffuse options.
-          These are available from the <strong>View - Scene settings </strong>menu. 
+          These are available from the <strong>View - Scene settings</strong> menu.
          PDB code: <a href="https://www.rcsb.org/structure/2Z6F">2Z6F</a>.
          <br />
          <strong>Click on the play button to load the Moorhen session!</strong>
@@ -88,7 +90,7 @@ export const GalleryLayout: React.FC = () => {
         tryItButtonTextColour: 'grey',
         title: "Human serotonin 5-HT3A receptor in complex with vortioxetine",
         description: <>
-         The 5-HT3A receptor pentamer subunits are shown as ribbons, with the vortioxetine ligands represented as spheres. 
+         The 5-HT3A receptor pentamer subunits are shown as ribbons, with the vortioxetine ligands represented as spheres.
          NAG molecules are represented as glyco-blocks.
          PDB code: <a href="https://www.rcsb.org/structure/8BLA">8BLA</a>.
          <br />
@@ -117,13 +119,14 @@ export const GalleryLayout: React.FC = () => {
         sessionUrl: "/gallery/6",
         originalWidth: 536,
         originalHeight: 449,
-        onClickWidth: 306,
-        onClickHeight: 249,
-        tryItButtonTextColour: 'white',
+        onClickWidth: 260,  //306
+        onClickHeight: 230, //249
+        tryItButtonTextColour: 'grey',
         title: "Bordetella pertussis virulence factor P.69 pertactin",
         description: <>
          The beta-helix structure is represented as ribbons, with one strand highlighted in gold.
          The background color is teal and can be adjusted in the <strong>View - Scene Settings</strong> menu.
+         <br />
          PDB code: <a href="https://www.rcsb.org/structure/1DAB">1DAB</a>.
          <br />
          <strong>Click on the play button to load the Moorhen session!</strong>
@@ -132,16 +135,17 @@ export const GalleryLayout: React.FC = () => {
       {
         src: "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/images/gallery-7.png",
         sessionUrl: "/gallery/7",
-        originalWidth: 651,
-        originalHeight: 635,
+        originalWidth: 2728,
+        originalHeight: 2509,
         onClickWidth: 250,
         onClickHeight: 250,
-        tryItButtonTextColour: 'white',
-        title: "Peripheral light-harvesting complex from Rhodopseudomonas acidophila strain 10050",
+        tryItButtonTextColour: 'grey',
+        title: "Outer membrane (OM) protein CymA from Klebsiella oxytoca",
         description: <>
-         The model is represented as ribbons and ball and sticks coloured by chains. 
-         The perspective projection can be enabled in the <strong> View - Other settings </strong> menu.
-         PDB code: <a href="https://www.rcsb.org/structure/1KZU">1KZU</a>.
+         The model is represented as ribbons, the C8E molecules are depicted as ball and sticks.
+         The perspective projection can be enabled in the <strong>View - Other settings</strong> menu.
+         <br />
+         PDB code: <a href="https://www.rcsb.org/structure/4V3H">4V3H</a>.
          <br />
          <strong>Click on the play button to load the Moorhen session!</strong>
         </>
@@ -149,15 +153,16 @@ export const GalleryLayout: React.FC = () => {
       {
         src: "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/images/gallery-8.png",
         sessionUrl: "/gallery/8",
-        originalWidth: 4096, 
+        originalWidth: 4096,
         originalHeight: 2959,
-        onClickWidth: 309,
-        onClickHeight: 225,
-        tryItButtonTextColour: 'white',
+        onClickWidth: 290, //309
+        onClickHeight: 215, //225
+        tryItButtonTextColour: 'grey',
         title: "Cyclin-dependent kinase",
         description: <>
          The kinase is represented as spheres coloured by atoms.
-         The cartoon effect is obtained by using <strong>Edge detection</strong> available from the <strong>View - Scene settings </strong>menu.
+         The cartoon effect is obtained by using <strong>Edge detection</strong> available from the <strong>View - Scene settings</strong> menu.
+         <br />
          PDB code: <a href="https://www.rcsb.org/structure/2VTQ">2VTQ</a>.
          <br />
          <strong>Click on the play button to load the Moorhen session!</strong>
@@ -166,16 +171,17 @@ export const GalleryLayout: React.FC = () => {
       {
         src: "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/images/gallery-9.png",
         sessionUrl: "/gallery/9",
-        originalWidth: 4096, 
-        originalHeight: 2286,
-        onClickWidth: 309,
-        onClickHeight: 225,
-        tryItButtonTextColour: 'white',
+        originalWidth: 2062, //2092
+        originalHeight: 1848,//2178
+        onClickWidth: 290,
+        onClickHeight: 270,
+        tryItButtonTextColour: 'grey',
         title: "PTH-bound human PTH1R in complex with Gs (class2)",
         description: <>
          cryo-EM model and map of PTH-PTH1R-Gs.
-         The map is masked by chains, with each map displayed as a semi-transparent surface. 
+         The map is masked by chains, with each map displayed as a semi-transparent surface.
          The model is represented as ribbons.
+         <br />
          PDB code: <a href="https://www.rcsb.org/structure/7VVL">7VVL</a>.
          <br />
          <strong>Click on the play button to load the Moorhen session!</strong>
@@ -184,10 +190,10 @@ export const GalleryLayout: React.FC = () => {
       {
         src: "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/images/gallery-10.png",
         sessionUrl: "/gallery/10",
-        originalWidth: 4096, 
-        originalHeight: 2182,
-        onClickWidth: 309,
-        onClickHeight: 225,
+        originalWidth: 4096,
+        originalHeight: 2482,
+        onClickWidth: 280,
+        onClickHeight: 207,
         tryItButtonTextColour: 'grey',
         title: "Scorpion protein toxin",
         description: <>
@@ -203,9 +209,9 @@ export const GalleryLayout: React.FC = () => {
         src: "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/images/gallery-11.png",
         sessionUrl: "/gallery/11",
         originalWidth: 4096, 
-        originalHeight: 2182,
-        onClickWidth: 309,
-        onClickHeight: 225,
+        originalHeight: 2630,
+        onClickWidth: 359,
+        onClickHeight: 205,
         tryItButtonTextColour: 'white',
         title: "Nicotinic acetylcholine receptor 1 subunit bound to alpha-bungarotoxin",
         description: <>
@@ -216,30 +222,41 @@ export const GalleryLayout: React.FC = () => {
          <strong>Click on the play button to load the Moorhen session!</strong>
         </>
       },
+      {
+        src: "https://raw.githubusercontent.com/moorhen-coot/gallery-sessions/main/images/gallery-12.png",
+        sessionUrl: "/gallery/12",
+        originalWidth: 4096,
+        originalHeight: 2300,
+        onClickWidth: 370,
+        onClickHeight: 210,
+        tryItButtonTextColour: 'white',
+        title: "Cyclin-dependent kinase inhibitor",
+        description: <>
+         The LZA ligand is displayed as balls and sticks and the map is depicted as a transparent surface.
+         The fluorescent effect is obtained by using a combination of lighting settings
+         available from the <strong>View - Scene settings</strong> menu.
+         PDB code: <a href="https://www.rcsb.org/structure/2VTQ">2VTQ</a>.
+         <br />
+         <strong>Click on the play button to load the Moorhen session!</strong>
+        </>
+      },
     ];
 
     let reorderedimageData = [
       imageData[5],
       imageData[1],
       imageData[6],
-      imageData[3],
       imageData[2],
-      imageData[4],
       imageData[7],
+      imageData[4],
       imageData[8],
+      imageData[3],
       imageData[9],
-      imageData[10],
       imageData[11],
+      imageData[10],
+      imageData[12],
     ];
 
-    // FIXME: We need more images here...
-    // this reproduce multiple images
-
-    //imageData = [ ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData, ...imageData ]
-    //reorderedimageData = [ ...reorderedimageData, ...reorderedimageData, ...reorderedimageData, ...reorderedimageData ] // means that the images are duplicated twice
-    //const images = imageData.map(image => {
-      //return { src: image.src, width: image.originalWidth, height: image.originalHeight }
-    //})
     const photos = reorderedimageData.map(image => ({
       src: image.src,
       width: image.originalWidth,
@@ -296,38 +313,15 @@ export const GalleryLayout: React.FC = () => {
               </Typography>
             </div>
             <img src={imageData[0].src}
-                 style={{ width: '50%', height: 'auto', cursor: 'pointer'}}
-                 //onClick={() => handleFigureClick(0 +1)}
+                 style={{ width: '50%', height: 'auto'}}
                  />
-
           </div>
-
-              {/* <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(3, 300px)', 
-                //gap: '0px', 
-                justifyContent: 'center' 
-            }}>
-                {photos.map((photo, index) => (
-                    <div key={index} style={{ 
-                        //border: '1px solid #ddd', 
-                        //borderRadius: '10px', 
-                        //boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', 
-                        overflow: 'hidden' 
-                    }}>
-                        <img src={photo.src} alt={`Photo ${index}`} style={{ 
-                            width: '100%', 
-                            height: 'auto', 
-                            //borderRadius: '10px' 
-                        }} />
-                    </div>
-                ))}
-            </div> */}
 
           <div style={{width: '100%' , overflowX: 'hidden', overflowY: 'auto'}}>
             <PhotoAlbum
               layout= "masonry"
               photos= {photos}
+              columns={4}
               spacing={1}
               onClick={({ index }) => handleFigureClick(index)}
             />
@@ -364,7 +358,7 @@ export const GalleryLayout: React.FC = () => {
                   position: 'absolute',
                   top: 460,
                   bottom:150,
-                  left: 80,
+                  left: 50,
                   width: reorderedimageData[imageIndex].onClickWidth/5,
                   height: reorderedimageData[imageIndex].onClickHeight/5,
                   color: reorderedimageData[imageIndex].tryItButtonTextColour,
