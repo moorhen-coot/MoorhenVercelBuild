@@ -1,6 +1,7 @@
 //import { Gallery } from "react-grid-gallery";
-import { PhotoAlbum } from 'react-photo-album';
+import  PhotoAlbum from 'react-photo-album';
 import { useCallback, useState } from "react";
+import "react-photo-album/masonry.css";
 import { Box, IconButton, Typography, Modal } from "@mui/material";
 import { PlayCircleOutlined } from '@mui/icons-material';
 
