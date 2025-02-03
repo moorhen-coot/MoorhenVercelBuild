@@ -138,8 +138,8 @@ export const GalleryLayout: React.FC = () => {
         sessionUrl: "/gallery/7",
         originalWidth: 2728,
         originalHeight: 2509,
-        onClickWidth: 250,
-        onClickHeight: 250,
+        onClickWidth: 234,
+        onClickHeight: 220,
         tryItButtonTextColour: 'grey',
         title: "Outer membrane (OM) protein CymA from Klebsiella oxytoca",
         description: <>
@@ -174,8 +174,8 @@ export const GalleryLayout: React.FC = () => {
         sessionUrl: "/gallery/9",
         originalWidth: 2062, //2092
         originalHeight: 1848,//2178
-        onClickWidth: 290,
-        onClickHeight: 270,
+        onClickWidth: 245,
+        onClickHeight: 220,
         tryItButtonTextColour: 'grey',
         title: "PTH-bound human PTH1R in complex with Gs (class2)",
         description: <>
@@ -293,13 +293,9 @@ export const GalleryLayout: React.FC = () => {
               <Typography
                 variant="h5"
                 style={{
-                       marginBottom: '20px',
-                       marginTop: '20px',
                        fontFamily: 'TT_Chocolates_demibold, cursive',
                        fontSize: '90px',
-                       paddingTop: '150px',
-                       paddingBottom: '30px',
-                       paddingLeft: '50px'
+                       textAlign: 'center',
                        }}>
                Moorhen Gallery
               </Typography>
@@ -310,12 +306,9 @@ export const GalleryLayout: React.FC = () => {
                       textAlign: 'center',
                       paddingRight: '30px',
                       fontSize: '25px'}}>
-                <> Screenshots provided by <a href="https://moorhen.org">moorhen.org</a> </>
+                <> Screenshots created with <a href="https://moorhen.org">moorhen.org</a> </>
               </Typography>
             </div>
-            <img src={imageData[0].src}
-                 style={{ width: '50%', height: 'auto'}}
-                 />
           </div>
 
           <div style={{width: '100%' , overflowX: 'hidden', overflowY: 'auto'}}>
