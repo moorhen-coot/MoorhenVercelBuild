@@ -14,6 +14,8 @@ export const CODLayout: React.FC = () => {
     const glRef = useRef<webGL.MGWebGL | null>(null)
     const commandCentre = useRef<moorhen.CommandCentre | null>(null)
 
+    const background_colour = useSelector((state: moorhen.State) => state.sceneSettings.backgroundColor)
+
     const { codid } = useParams()
 
     const urlPrefix = "/baby-gru"
@@ -22,8 +24,8 @@ export const CODLayout: React.FC = () => {
 
     const loadCOD = async (codid: string) => {
 
-        if (!glRef.current || !commandCentre.current) {
-            console.warn('Empty glRef or commandCentre, doing nothing...')
+        if (!commandCentre.current) {
+            console.warn('Empty commandCentre, doing nothing...')
             return
         } else if (!codid) {
             console.warn('Empty codid string, doing nothing...')
@@ -63,7 +65,7 @@ export const CODLayout: React.FC = () => {
 
         if (result) {
             newMolecule.name = codid
-            newMolecule.setBackgroundColour(glRef.current.background_colour)
+            newMolecule.setBackgroundColour(background_colour)
             newMolecule.defaultBondOptions.smoothness = defaultBondSmoothness
             newMolecule.coordsFormat = 'mmcif'
             await newMolecule.fetchIfDirtyAndDraw("CBs")
