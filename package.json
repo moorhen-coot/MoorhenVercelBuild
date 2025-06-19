@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@vercel/speed-insights": "^1.0.9",
-    "moorhen": "file:///Users/stuart/Moorhen/baby-gru/dist/moorhen-0.21.1.tgz",
+    "moorhen": "0.21.2-react19.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-grid-gallery": "^1.0.1",
